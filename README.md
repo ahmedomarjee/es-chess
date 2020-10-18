@@ -25,3 +25,5 @@ cp .env.example .env
 composer install
 php bin/console doctrine:migrations:migrate
 ```
+
+!["Demo"](sample.gif)

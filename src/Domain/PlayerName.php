@@ -4,7 +4,7 @@ namespace App\Domain;
 
 final class PlayerName
 {
-    private const MAX_NAME_LEN = 32;
+    private const MAX_NAME_LEN = 64;
     private string $name;
 
     public function __construct(string $name)

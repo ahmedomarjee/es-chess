@@ -4,7 +4,7 @@ namespace App\Domain;
 
 final class GameName
 {
-    private const MAX_NAME_LEN = 16;
+    private const MAX_NAME_LEN = 32;
     private const DEFAULT_GAME_NAME = 'Test chess game';
 
     private string $name;

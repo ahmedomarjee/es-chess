@@ -66,6 +66,8 @@ class ChessGame
         $this->unpublishedEvents[] = $makeMoveEvent;
         $this->apply($makeMoveEvent);
 
+        echo $this->chessEngine->display();
+
         return $this->chessEngine->isGameOver();
     }
 
@@ -96,6 +98,8 @@ class ChessGame
 
         $this->unpublishedEvents[] = $gaveUpEvent;
         $this->apply($gaveUpEvent);
+
+        echo $this->chessEngine->display();
     }
 
     public function create(
@@ -111,6 +115,8 @@ class ChessGame
         );
         $this->unpublishedEvents[] = $createEvent;
         $this->apply($createEvent);
+
+        echo $this->chessEngine->display();
     }
 
     /**
@@ -141,15 +147,12 @@ class ChessGame
         $this->playerTwoName = $event->getPlayerTwoName();
         $this->gameName = $event->getGameName();
         $this->gameStarted = true;
-
-        echo $this->chessEngine->display();
     }
 
     private function handleMoveMade(MoveMade $event): void
     {
         $this->chessEngine->makeMove($event->getMove());
-
-        echo $this->chessEngine->display();
+        $this->lastMoveBy = $event->getPlayerName();
     }
 
     private function handleGaveUp(GaveUp $event): void

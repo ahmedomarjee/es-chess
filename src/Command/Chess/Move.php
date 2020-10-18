@@ -37,7 +37,7 @@ class Move extends Command
                 $input->getArgument('player'),
                 $input->getArgument('move')
             );
-            $output->writeln(sprintf("Player %s made move %s in a game with id: '%s'",
+            $output->writeln(sprintf('%s made move %s',
                 $input->getArgument('player'),
                 $input->getArgument('move'),
                 $input->getArgument('game_id')
